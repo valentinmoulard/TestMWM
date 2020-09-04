@@ -1,0 +1,27 @@
+MOULARD Valentin - Test MWM
+Voici mon compte rendu :
+
+Pour la conception de ce prototype, je m'en suis tenu aux bases. J'ai volontairement utilisé les figures géométriques basique de Unity pour économiser le plus de temps.
+Etant donné que c'est la premiere fois que je prototype un jeu hyper casual en un si court délai, je me suis focaslié sur les étapes clé d'un jeu hyper casual. 
+J'ai classé ces étapes dans un ordre spécifique pour pouvoir tester un maximum de gameplay dans le cas où je ne finisse pas le test à temps.
+
+Voici donc les éléments clés classés par ordre de priorité.
+-Control du personnage (pouvoir le lancer dans les airs à l'ai d'un swipe vers le bas, et l'arreter lorsqu'on retouche l'ecran)
+-Control de la caméra (camera suivant le joueur)
+-L'ajout d'obstacles sur lesquels le joueur ne peut pas poser sa balle.
+-L'ajout de Bonus pour marquer des points (Ce constitue la principale source de satisfation pour le joueur)
+-Une UI simple pour afficher les points générés par le joueur.
+-Et enfin une boucle de gameplay avec un minimum de niveau différents. Comme dans le jeu Pokey Ball, une fois la ligne d'arrivée franchie, un nouveau niveau se lance peu après.
+
+Je n'ai pas vraiment eu le temps de faire plusieurs niveaux. Je n'ai fait que déplacer des bonus et des obstacles pour diversifier les 3 niveaux présents dans le projet.
+
+J'ai réutilisé du code que j'avais deja produit. Il s'agit des scripts présent dans le dossier controllers.
+Ces scripts génériques m'ont permis de gagner du temps en évitant de coder les réactions aux inputs (click, maintient de click etc). 
+Ils m'ont permis de recupérer la position du curseur en fonction des actions effectué sur l'écran.
+
+Je suis globalement satisfait du projet que j'ai produit. Je regrette seulement de ne pas avoir pu commenter le code convenablement par manque de temps.
+J'espere que le nom des fonctions, variables etc seront suffisament explicites.
+
+En conclusion, je suis satisfait d'avoir pu terminer le projet avec une boucle de gameplay fonctionnelle. 
+Il reste cependant quelques aspects à améliorer tel que les assets graphiques en générale et une fonctionnalité qui manque. 
+Cette fonctionnalité manquante doit empecher le joueur d'arrete sa boule alors qu'il a franchi la ligne d'arrivée. 
