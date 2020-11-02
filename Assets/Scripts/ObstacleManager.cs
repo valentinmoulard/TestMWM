@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class ObstacleManager : MonoBehaviour
 {
     public static Action OnBallStopOnObstacle;
     public static Action OnBallNotStopOnObstacle;
     private float m_obstacleHeight;
-
+    [SerializeField]
+    private List<GameObject> m_obstacleList;
 
     private void OnEnable()
     {
@@ -20,21 +21,19 @@ public class Obstacle : MonoBehaviour
         PlayerMovement.OnPlayerBallStop -= CheckPlayerBallOnObstacle;
     }
 
-    void Start()
-    {
-        m_obstacleHeight = transform.localScale.y;
-    }
-
     private void CheckPlayerBallOnObstacle(Vector3 playerPosition)
     {
-        if (playerPosition.y < transform.position.y + m_obstacleHeight/2 && playerPosition.y > transform.position.y - m_obstacleHeight / 2)
+        for (int i = 0; i < m_obstacleList.Count; i++)
         {
-            BroadcastOnBallStopOnObstacle();
+            m_obstacleHeight = m_obstacleList[i].gameObject.transform.localScale.y;
+            if (playerPosition.y < m_obstacleList[i].gameObject.transform.position.y + m_obstacleHeight / 2 && playerPosition.y > m_obstacleList[i].gameObject.transform.position.y - m_obstacleHeight / 2)
+            {
+                BroadcastOnBallStopOnObstacle();
+                return;
+            }
         }
-        else
-        {
-            BroadcastOnBallNotStopOnObstacle();
-        }
+
+        BroadcastOnBallNotStopOnObstacle();
     }
 
     private void BroadcastOnBallStopOnObstacle()

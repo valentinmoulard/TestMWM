@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         Controller.OnTapBegin += GetCursorStartPosition;
         Controller.OnRelease += MoveBall;
         Controller.OnHold += UpdateBallPositionBeforeLaunch;
-        Obstacle.OnBallNotStopOnObstacle += StopBall;
+        ObstacleManager.OnBallNotStopOnObstacle += StopBall;
 
         GameManager.OnNewLevelStarted += ResetPlayerState;
     }
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         Controller.OnTapBegin -= GetCursorStartPosition;
         Controller.OnRelease -= MoveBall;
         Controller.OnHold -= UpdateBallPositionBeforeLaunch;
-        Obstacle.OnBallNotStopOnObstacle -= StopBall;
+        ObstacleManager.OnBallNotStopOnObstacle -= StopBall;
 
         GameManager.OnNewLevelStarted -= ResetPlayerState;
     }
